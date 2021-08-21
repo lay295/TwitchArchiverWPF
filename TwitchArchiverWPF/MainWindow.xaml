@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwitchArchiverWPF"
+        xmlns:hc="https://handyorg.github.io/handycontrol" xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="TwitchArchiverWPF.MainWindow"
+        mc:Ignorable="d"
+        Title="Twitch Archiver" Height="550" Width="900" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <hc:SideMenu Grid.Column="0" BorderThickness="1" HorizontalAlignment="Center" Width="140">
+            <hc:SideMenuItem IsSelected="True" Header="Streamers" Selected="SideMenuItem_Selected">
+
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="VODs" Selected="SideMenuItem_Selected_1">
+
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="Settings" Selected="SideMenuItem_Selected_2">
+
+            </hc:SideMenuItem>
+        </hc:SideMenu>
+        <Frame Grid.Column="1" Focusable="False" x:Name="Main" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
+        <hc:NotifyIcon x:Name="NotifyIcon" Visibility="Hidden" HorizontalAlignment="Left" Height="100" Margin="650,424,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1" MouseDoubleClick="NotifyIcon_MouseDoubleClick">
+            <hc:NotifyIcon.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Open" Click="MenuItem_Click"/>
+                <MenuItem Command="hc:ControlCommands.ShutdownApp" Header="Exit"/>
+            </ContextMenu>
+            </hc:NotifyIcon.ContextMenu>
+        </hc:NotifyIcon>
+
+    </Grid>
+</Window>

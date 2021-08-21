@@ -1,0 +1,39 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TwitchArchiverWPF"
+      xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="TwitchArchiverWPF.PageSettings"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="PageSettings">
+
+    <Grid>
+
+        <hc:TextBox x:Name="TextDownloadFolder" HorizontalAlignment="Left" Margin="111,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" TextChanged="TextDownloadFolder_TextChanged"/>
+        <hc:SimpleText Text="Download Folder: " HorizontalAlignment="Left" Height="26" Margin="11,40,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="ButtonDownloadFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="466,36,0,0" VerticalAlignment="Top" Width="106" Click="ButtonDownloadFolder_Click"/>
+        <hc:TextBox x:Name="TextTempFolder" HorizontalAlignment="Left" Margin="111,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" TextChanged="TextTempFolder_TextChanged"/>
+        <hc:SimpleText Text="Temp Folder: " HorizontalAlignment="Left" Height="26" Margin="34,75,0,0" VerticalAlignment="Top" Width="72"/>
+        <Button x:Name="ButtonTempFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="466,71,0,0" VerticalAlignment="Top" Width="106" Click="ButtonTempFolder_Click"/>
+        <hc:Divider Content="Storage Settings" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="18" Margin="0,10,0,0"/>
+        <hc:Divider Content="Live Recording Settings" VerticalAlignment="Top" Height="18" Margin="0,111,0,0"/>
+        <CheckBox x:Name="CheckTTV" Content="Use TTV.LOL" HorizontalAlignment="Left" Margin="23,143,0,0" VerticalAlignment="Top" Checked="CheckTTV_Checked" Unchecked="CheckTTV_Unchecked"/>
+        <CheckBox x:Name="CheckOauth"  Content="Use Custom OAuth Token (Live)" HorizontalAlignment="Left" Margin="23,166,0,0" VerticalAlignment="Top" Checked="CheckOauth_Checked" Unchecked="CheckOauth_Unchecked"/>
+        <hc:TextBox x:Name="TextOauth" IsEnabled="False" HorizontalAlignment="Left" Margin="23,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" LostFocus="TextOauth_LostFocus"/>
+        <hc:Divider Content="Post Processing Settings" VerticalAlignment="Top" Height="18" Margin="0,227,0,0"/>
+        <CheckBox x:Name="CheckRender" Content="Render Chat" HorizontalAlignment="Left" Margin="23,250,0,0" VerticalAlignment="Top" Checked="CheckRender_Checked" Unchecked="CheckRender_Unchecked"/>
+        <RadioButton x:Name="RadioLive" IsEnabled="False" GroupName="RenderPrefrence" Content="Live" HorizontalAlignment="Left" Margin="23,305,0,0" VerticalAlignment="Top" Checked="RadioLive_Checked"/>
+        <RadioButton x:Name="RadioVod" IsEnabled="False" GroupName="RenderPrefrence" Content="VOD" HorizontalAlignment="Left" Margin="75,305,0,0" VerticalAlignment="Top" Checked="RadioVod_Checked"/>
+        <hc:SimpleText Text="Chat Render Prefrence:" HorizontalAlignment="Left" Height="27" Margin="23,282,0,0" VerticalAlignment="Top" Width="139"/>
+        <RadioButton x:Name="RadioBoth" IsEnabled="False" GroupName="RenderPrefrence" Content="Both" HorizontalAlignment="Left" Margin="132,305,0,0" VerticalAlignment="Top" Checked="RadioBoth_Checked"/>
+        <Button Content="Edit Render Options" HorizontalAlignment="Left" Margin="23,340,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click"/>
+        <hc:SimpleText Text="Check Live Every (s):" HorizontalAlignment="Left" Height="16" Margin="235,144,0,0" VerticalAlignment="Top" Width="139"/>
+        <hc:NumericUpDown x:Name="NumLive" Minimum="1"  HorizontalAlignment="Left" Margin="345,137,0,0" VerticalAlignment="Top" ValueChanged="NumLive_ValueChanged"/>
+        <CheckBox x:Name="CheckOauthVod"  Content="Use Custom OAuth Token (VOD)" HorizontalAlignment="Left" Margin="235,166,0,0" VerticalAlignment="Top" Checked="CheckOauthVod_Checked" Unchecked="CheckOauthVod_Unchecked"/>
+        <hc:TextBox x:Name="TextOauthVod" IsEnabled="False" HorizontalAlignment="Left" Margin="235,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" LostFocus="TextOauthVod_LostFocus"/>
+        <hc:Divider Content="Misc. Settings" VerticalAlignment="Top" Height="18" Margin="0,386,0,0"/>
+        <CheckBox x:Name="CheckStartup" Content="Start Program On Startup" HorizontalAlignment="Left" Margin="23,419,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+    </Grid>
+</Page>

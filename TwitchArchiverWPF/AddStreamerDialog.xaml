@@ -1,0 +1,23 @@
+﻿<Border x:Class="TwitchArchiverWPF.AddStreamerDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        CornerRadius="10"
+        Width="400"
+        Height="247"
+        Background="{DynamicResource RegionBrush}" Loaded="Border_Loaded">
+    <hc:SimplePanel>
+        <Button Width="22" Height="22" Command="hc:ControlCommands.Close" Style="{StaticResource ButtonIcon}" Foreground="{DynamicResource PrimaryBrush}" hc:IconElement.Geometry="{StaticResource ErrorGeometry}" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,4,0"/>
+        <Image x:Name="StreamerAvatar" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Source="/Images/avatar.png" Margin="17,15,0,0"/>
+        <TextBox x:Name="StreamerName" HorizontalAlignment="Left" Height="0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Margin="195,15,0,0" TextChanged="TextBox_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Streamer Name: " VerticalAlignment="Top" Width="94" Margin="101,20,0,0"/>
+        <TextBox x:Name="StreamerId" IsReadOnly="True" HorizontalAlignment="Left" Height="0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Margin="195,55,0,0" TextChanged="TextBox2_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Twitch ID: " VerticalAlignment="Top" Width="55" Margin="135,62,0,0"/>
+        <hc:Divider Content="Archiving Options" HorizontalAlignment="Center" Height="16" VerticalAlignment="Top" Width="400" Margin="0,97,0,0"/>
+        <CheckBox x:Name="CheckDownloadLiveStream" Content="Download Live Broadcast" Height="22" Width="164" HorizontalAlignment="Left" Margin="10,6,0,0" Checked="CheckDownloadLiveStream_Checked" Unchecked="CheckDownloadLiveStream_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadLiveChat" Content="Download Live Chat" Height="22" Width="164" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" Checked="CheckDownloadLiveChat_Checked" Unchecked="CheckDownloadLiveChat_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadVodStream" Content="Download VOD Broadcast" Height="22" Width="164" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Checked="CheckDownloadVodStream_Checked" Unchecked="CheckDownloadVodStream_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadVodChat" Content="Download VOD Chat" Height="22" Width="164" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Checked="CheckDownloadVodChat_Checked" Unchecked="CheckDownloadVodChat_Unchecked"/>
+        <Button x:Name="ButtonAdd" Content="Add&#xD;&#xA;Add" Height="29" Width="65" HorizontalAlignment="Left" Margin="325,208,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    </hc:SimplePanel>
+</Border>

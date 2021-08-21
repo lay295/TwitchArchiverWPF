@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwitchArchiverWPF"
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="TwitchArchiverWPF.WindowRenderSettings"
+        mc:Ignorable="d"
+        Title="Render Settings" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+
+        <hc:SimpleStackPanel  Margin="32,3,624,-3">
+            <hc:SimpleText FontSize="16" Text="Font: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,14,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Font Size: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Font Color: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Background Color: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Outline: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Timestamp: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="FFZ Emotes: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="BTTV Emotes: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="7TV Emotes: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+        </hc:SimpleStackPanel>
+        <hc:ComboBox x:Name="ComboFonts"  HorizontalAlignment="Left" Margin="194,13,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="ComboFonts_SelectionChanged"/>
+        <hc:TextBox x:Name="TextFontSize" Text="24" HorizontalAlignment="Left" Margin="194,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextFontSize_TextChanged"/>
+        <hc:TextBox x:Name="TextFontColor" Text="#FFFFFF" HorizontalAlignment="Left" Margin="194,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" TextChanged="TextFontColor_TextChanged"/>
+        <hc:TextBox x:Name="TextBackgroundColor" Text="#111111" HorizontalAlignment="Left" Margin="194,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" TextChanged="TextBackgroundColor_TextChanged"/>
+        <CheckBox x:Name="CheckOutline" HorizontalAlignment="Left" Margin="194,156,0,0" VerticalAlignment="Top" Checked="CheckOutline_Checked" Unchecked="CheckOutline_Unchecked"/>
+        <CheckBox x:Name="CheckTimestamp"  HorizontalAlignment="Left" Margin="194,191,0,0" VerticalAlignment="Top" Checked="CheckTimestamp_Checked" Unchecked="CheckTimestamp_Unchecked"/>
+        <CheckBox x:Name="CheckFFZ" IsChecked="True" HorizontalAlignment="Left" Margin="194,224,0,0" VerticalAlignment="Top" Checked="CheckFFZ_Checked" Unchecked="CheckFFZ_Unchecked"/>
+        <CheckBox x:Name="CheckBTTV" IsChecked="True" HorizontalAlignment="Left" Margin="194,259,0,0" VerticalAlignment="Top" Checked="CheckBTTV_Checked" Unchecked="CheckBTTV_Unchecked"/>
+        <CheckBox x:Name="CheckSTV" IsChecked="True" HorizontalAlignment="Left" Margin="194,293,0,0" VerticalAlignment="Top" Checked="CheckSTV_Checked" Unchecked="CheckSTV_Unchecked"/>
+        <Button x:Name="ButtonFontColor" Content="Edit" HorizontalAlignment="Left" Margin="319,83,0,0" VerticalAlignment="Top" Click="ButtonFontColor_Click"/>
+        <hc:SimpleStackPanel  Margin="394,3,277,-3">
+            <hc:SimpleText FontSize="16" Text="Height: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,14,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Width: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Update Time: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Framerate: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="File Format: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Codec: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Sub Messages: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+            <hc:SimpleText FontSize="16" Text="Generate Mask: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,13,0,0"/>
+        </hc:SimpleStackPanel>
+        <hc:TextBox x:Name="TextHeight" HorizontalAlignment="Left" Margin="539,13,0,0" TextWrapping="Wrap" Text="1200" VerticalAlignment="Top" Width="90" TextChanged="TextHeight_TextChanged"/>
+        <hc:TextBox x:Name="TextWidth" HorizontalAlignment="Left" Margin="539,48,0,0" TextWrapping="Wrap" Text="600" VerticalAlignment="Top" Width="90" TextChanged="TextWidth_TextChanged"/>
+        <hc:TextBox x:Name="TextUpdateTime" HorizontalAlignment="Left" Margin="539,83,0,0" TextWrapping="Wrap" Text="0.5" VerticalAlignment="Top" Width="90" TextChanged="TextUpdateTime_TextChanged"/>
+        <hc:TextBox x:Name="TextFramerate" HorizontalAlignment="Left" Margin="539,117,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="90" TextChanged="TextFramerate_TextChanged"/>
+        <hc:ComboBox x:Name="ComboFormats" HorizontalAlignment="Left" Margin="539,152,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="ComboFormats_SelectionChanged"/>
+        <hc:ComboBox x:Name="ComboCodecs" HorizontalAlignment="Left" Margin="539,185,0,0" VerticalAlignment="Top" Width="90" SelectionChanged="ComboCodecs_SelectionChanged"/>
+        <CheckBox x:Name="CheckSubMessages" IsChecked="True" HorizontalAlignment="Left" Margin="539,226,0,0" VerticalAlignment="Top" Checked="CheckSubMessages_Checked" Unchecked="CheckSubMessages_Unchecked"/>
+        <CheckBox x:Name="CheckGenerateMask" HorizontalAlignment="Left" Margin="539,260,0,0" VerticalAlignment="Top" Checked="CheckGenerateMask_Checked" Unchecked="CheckGenerateMask_Unchecked"/>
+        <Button x:Name="ButtonBackgroundColor" Content="Edit" HorizontalAlignment="Left" Margin="319,118,0,0" VerticalAlignment="Top" Click="ButtonBackgroundColor_Click"/>
+        <Rectangle x:Name="RectangleFontColor" Stroke="Gray" Fill="#FFFFFF" HorizontalAlignment="Left" Height="24" Margin="287,86,0,0" VerticalAlignment="Top" Width="24"/>
+        <Rectangle x:Name="RectangleBackgroundColor" Stroke="Gray" Fill="#111111" HorizontalAlignment="Left" Height="24" Margin="287,121,0,0" VerticalAlignment="Top" Width="24"/>
+    </Grid>
+</Window>

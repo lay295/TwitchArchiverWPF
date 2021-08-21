@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwitchArchiverWPF"
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="TwitchArchiverWPF.WindowStreamerSettings"
+        mc:Ignorable="d"
+        Title="Streamer Settings" Height="450" Width="500" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,59">
+
+        <CheckBox x:Name="CheckRender" IsEnabled="False" Content="Render Chat" HorizontalAlignment="Left" Margin="266,154,0,0" VerticalAlignment="Top" Checked="CheckRender_Checked" Unchecked="CheckRender_Unchecked"/>
+        <RadioButton x:Name="RadioLive" IsEnabled="False" GroupName="RenderPrefrence" Content="Live" HorizontalAlignment="Left" Margin="266,209,0,0" VerticalAlignment="Top" Checked="RadioLive_Checked"/>
+        <RadioButton x:Name="RadioVod" IsChecked="True" IsEnabled="False" GroupName="RenderPrefrence" Content="VOD" HorizontalAlignment="Left" Margin="321,209,0,0" VerticalAlignment="Top" Checked="RadioVod_Checked"/>
+        <hc:SimpleText Text="Chat Render Prefrence:" HorizontalAlignment="Left" Height="27" Margin="266,186,0,0" VerticalAlignment="Top" Width="139"/>
+        <RadioButton x:Name="RadioBoth" IsEnabled="False" GroupName="RenderPrefrence" Content="Both" HorizontalAlignment="Left" Margin="383,209,0,0" VerticalAlignment="Top" Checked="RadioBoth_Checked"/>
+        <Button x:Name="ButtonEditRender" IsEnabled="False" Content="Edit Render Options" HorizontalAlignment="Left" Margin="266,244,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click"/>
+        <CheckBox x:Name="CheckTTV" IsEnabled="False" Content="Use TTV.LOL" HorizontalAlignment="Left" Margin="20,151,0,0" VerticalAlignment="Top" Checked="CheckTTV_Checked" Unchecked="CheckTTV_Unchecked"/>
+        <CheckBox x:Name="CheckOauth" IsEnabled="False" Content="Use Custom OAuth Token (Live)" HorizontalAlignment="Left" Margin="20,174,0,0" VerticalAlignment="Top" Checked="CheckOauth_Checked" Unchecked="CheckOauth_Unchecked"/>
+        <hc:TextBox x:Name="TextOauth" IsEnabled="False" HorizontalAlignment="Left" Margin="20,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" LostFocus="TextOauth_LostFocus"/>
+        <hc:SimpleText Text="Check Live Every (s):" HorizontalAlignment="Left" Height="16" Margin="20,247,0,0" VerticalAlignment="Top" Width="139"/>
+        <hc:NumericUpDown IsEnabled="False" Value="3" x:Name="NumLive" Minimum="1"  HorizontalAlignment="Left" Margin="130,240,0,0" VerticalAlignment="Top" ValueChanged="NumLive_ValueChanged"/>
+        <CheckBox x:Name="CheckOauthVod" IsEnabled="False" Content="Use Custom OAuth Token (VOD)" HorizontalAlignment="Left" Margin="20,277,0,0" VerticalAlignment="Top" Checked="CheckOauthVod_Checked" Unchecked="CheckOauthVod_Unchecked"/>
+        <hc:TextBox x:Name="TextOauthVod" IsEnabled="False" HorizontalAlignment="Left" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" LostFocus="TextOauthVod_LostFocus"/>
+        <hc:Divider HorizontalAlignment="Left" Orientation="Vertical" Margin="237,95,0,0" VerticalAlignment="Top" Height="289" Width="13"/>
+        <CheckBox x:Name="CheckOverrideRecording" Content="Override Recording Settings" HorizontalAlignment="Left" Margin="21,112,0,0" VerticalAlignment="Top" Checked="CheckOverrideRecording_Checked" Unchecked="CheckOverrideRecording_Unchecked"/>
+        <CheckBox x:Name="CheckOverridePost" Content="Override Post Proccessing Settings" HorizontalAlignment="Left" Margin="266,116,0,0" VerticalAlignment="Top" Checked="CheckOverridePost_Checked" Unchecked="CheckOverridePost_Unchecked"/>
+        <hc:Divider HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Height="5" Width="500"/>
+        <CheckBox x:Name="CheckDownloadLiveStream" Content="Download Live Broadcast" Height="22" Width="164" HorizontalAlignment="Left" Margin="22,24,0,0" VerticalAlignment="Top" Checked="CheckDownloadLiveStream_Checked" Unchecked="CheckDownloadLiveStream_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadLiveChat" Content="Download Live Chat" Height="22" Width="164" HorizontalAlignment="Left" Margin="22,46,0,0" VerticalAlignment="Top" Checked="CheckDownloadLiveChat_Checked" Unchecked="CheckDownloadLiveChat_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadVodStream" Content="Download VOD Broadcast" Height="22" Width="164" HorizontalAlignment="Left" Margin="191,24,0,0" VerticalAlignment="Top" Checked="CheckDownloadVodStream_Checked" Unchecked="CheckDownloadVodStream_Unchecked"/>
+        <CheckBox x:Name="CheckDownloadVodChat" Content="Download VOD Chat" Height="22" Width="164" HorizontalAlignment="Left" Margin="191,46,0,0" VerticalAlignment="Top" Checked="CheckDownloadVodChat_Checked" Unchecked="CheckDownloadVodChat_Unchecked"/>
+    </Grid>
+</Window>
