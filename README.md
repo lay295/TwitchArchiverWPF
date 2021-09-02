@@ -54,4 +54,6 @@ Again pretty self explanatory, on Windows Startup the archiver will also start.
 ## How Do I Get My OAuth token?
 I have an unrelated video [here](https://www.youtube.com/watch?v=1MBsUoFGuls) explaining how to get your Twitch OAuth token.
 
+TLDR: It's the "auth-token" cookie from Twitch.tv
+
 Full Disclaimer, this OAuth token basically gives **FULL ACCESS** to the Twitch account, if you don't trust my program don't put it in and don't give it to anybody. If you don't trust my program, you can just archive VODs which don't have ads, deal with ads on Live Broadcasts, or maybe make a seperate Twitch account you don't care about that has Twitch Turbo to give to the program.
