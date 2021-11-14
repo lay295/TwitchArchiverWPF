@@ -866,7 +866,7 @@ namespace TwitchArchiverWPF
             bool isLive = true;
             string baseUrl = "";
             if (playlistUrl != null)
-                playlistUrl.Substring(0, playlistUrl.LastIndexOf("/") + 1);
+                baseUrl = playlistUrl.Substring(0, playlistUrl.LastIndexOf("/") + 1);
             int failCount = 0;
 
             while (isLive && !token.IsCancellationRequested)
