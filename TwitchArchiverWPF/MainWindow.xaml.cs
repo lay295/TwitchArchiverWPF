@@ -60,6 +60,11 @@ namespace TwitchArchiverWPF
 
         public MainWindow()
         {
+            String processName = Process.GetCurrentProcess().ProcessName;
+
+            if (Process.GetProcesses().Count(p => p.ProcessName == processName) > 1)
+                System.Windows.Application.Current.Shutdown();
+
             if (!File.Exists("ffmpeg.exe"))
                 FFmpegDownloader.GetLatestVersion(FFmpegVersion.Official);
 

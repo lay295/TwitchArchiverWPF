@@ -10,10 +10,11 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="140"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
 
-        <hc:SideMenu Grid.Column="0" BorderThickness="1" HorizontalAlignment="Center" Width="140">
+        <hc:SideMenu BorderThickness="1" HorizontalAlignment="Center" Width="140">
             <hc:SideMenuItem IsSelected="True" Header="Streamers" Selected="SideMenuItem_Selected">
 
             </hc:SideMenuItem>
@@ -25,12 +26,12 @@
             </hc:SideMenuItem>
         </hc:SideMenu>
         <Frame Grid.Column="1" Focusable="False" x:Name="Main" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
-        <hc:NotifyIcon x:Name="NotifyIcon" Visibility="Hidden" HorizontalAlignment="Left" Height="100" Margin="650,424,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1" MouseDoubleClick="NotifyIcon_MouseDoubleClick">
+        <hc:NotifyIcon x:Name="NotifyIcon" Visibility="Hidden" HorizontalAlignment="Left" Height="100" Margin="186,424,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2" MouseDoubleClick="NotifyIcon_MouseDoubleClick">
             <hc:NotifyIcon.ContextMenu>
-            <ContextMenu>
-                <MenuItem Header="Open" Click="MenuItem_Click"/>
-                <MenuItem Command="hc:ControlCommands.ShutdownApp" Header="Exit"/>
-            </ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open" Click="MenuItem_Click"/>
+                    <MenuItem Command="hc:ControlCommands.ShutdownApp" Header="Exit"/>
+                </ContextMenu>
             </hc:NotifyIcon.ContextMenu>
         </hc:NotifyIcon>
 
