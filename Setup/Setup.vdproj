@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_993D260AAB70475F914A1CC364FE6BC1"
+        "MsmKey" = "8:_C458D6C8CA9C4EEA93EA164512CB747C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -148,9 +148,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_993D260AAB70475F914A1CC364FE6BC1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C458D6C8CA9C4EEA93EA164512CB747C"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\archive_wF(1).ico"
+            "SourcePath" = "8:..\\TwitchArchiverWPF\\logo.ico"
             "TargetName" = "8:logo.ico"
             "Tag" = "8:"
             "Folder" = "8:_2489E2E444404492851A7DE4124D6926"
@@ -356,7 +356,7 @@
             "Target" = "8:_CC41110DB5804FF4AAD149D9A80A33A7"
             "Folder" = "8:_C2CFB9BF72E44500B476E349044E13C5"
             "WorkingFolder" = "8:_2489E2E444404492851A7DE4124D6926"
-            "Icon" = "8:_993D260AAB70475F914A1CC364FE6BC1"
+            "Icon" = "8:_C458D6C8CA9C4EEA93EA164512CB747C"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D11F5EA0478C4C7AAF29ED79F95A2662"
@@ -370,7 +370,7 @@
             "Target" = "8:_CC41110DB5804FF4AAD149D9A80A33A7"
             "Folder" = "8:_66CEB066D4244AA6A54BCF1B0AFB65A8"
             "WorkingFolder" = "8:_2489E2E444404492851A7DE4124D6926"
-            "Icon" = "8:_993D260AAB70475F914A1CC364FE6BC1"
+            "Icon" = "8:_C458D6C8CA9C4EEA93EA164512CB747C"
             "Feature" = "8:"
             }
         }
@@ -774,7 +774,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CC41110DB5804FF4AAD149D9A80A33A7"
             {
-            "SourcePath" = "8:..\\TwitchArchiverWPF\\obj\\Release\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\TwitchArchiverWPF\\obj\\Debug\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2489E2E444404492851A7DE4124D6926"

@@ -88,7 +88,7 @@ namespace TwitchArchiverWPF
                         if ((streamerList[i].OverrideRecordingSettings && checkCount % streamerList[i].RecordingSettings.LiveCheck == 0) || (!streamerList[i].OverrideRecordingSettings && checkCount % globalSettings.RecordingSettings.LiveCheck == 0))
                         {
                             bool updatedToken = true;
-                            if (!accessTokens.ContainsKey(streamerList[i].Id) || DateTime.Now.CompareTo(accessTokens[streamerList[i].Id].expires.AddMinutes(-5)) < 0)
+                            if (!accessTokens.ContainsKey(streamerList[i].Id) || DateTime.Now.CompareTo(accessTokens[streamerList[i].Id].expires.AddMinutes(-5)) > 0)
                             {
                                 updatedToken = RefreshToken(streamerList[i], accessTokens, globalSettings);
                             }
