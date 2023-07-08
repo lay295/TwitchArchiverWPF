@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TwitchArchiverWPF"
       xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="TwitchArchiverWPF.PageSettings"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="900"
       Title="PageSettings">
 
     <Grid>
@@ -35,5 +35,13 @@
         <hc:TextBox x:Name="TextOauthVod" IsEnabled="False" HorizontalAlignment="Left" Margin="235,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" LostFocus="TextOauthVod_LostFocus"/>
         <hc:Divider Content="Misc. Settings" VerticalAlignment="Top" Height="18" Margin="0,386,0,0"/>
         <CheckBox x:Name="CheckStartup" Content="Start Program On Startup" HorizontalAlignment="Left" Margin="23,419,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <hc:SimpleText Text="Default quality:" HorizontalAlignment="Left" Height="16" Margin="450,144,0,0" VerticalAlignment="Top" Width="138"/>
+        <ComboBox x:Name="QualityPreference" HorizontalAlignment="Left" Height="16" Margin="546,137,0,0" VerticalAlignment="Top" Width="138" SelectionChanged="QualityPreference_SelectionChanged">
+            <ComboBoxItem Name="Source">Source</ComboBoxItem>
+            <ComboBoxItem Name="_1080p">1080p</ComboBoxItem>
+            <ComboBoxItem Name="_720p">720p</ComboBoxItem>
+            <ComboBoxItem Name="_480p">480p</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </Page>

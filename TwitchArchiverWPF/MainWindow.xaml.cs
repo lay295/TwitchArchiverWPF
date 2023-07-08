@@ -117,11 +117,31 @@ namespace TwitchArchiverWPF
                                     string streamId = playlistList.First(x => x.Contains("BROADCAST-ID=")).Split(',').First(x => x.Contains("BROADCAST-ID=")).Replace("BROADCAST-ID=", "").Replace("\"", "");
                                     double serverTime = double.Parse(playlistList.First(x => x.Contains("SERVER-TIME=")).Split(',').First(x => x.Contains("SERVER-TIME=")).Replace("SERVER-TIME=", "").Replace("\"", ""));
                                     double streamTime = double.Parse(playlistList.First(x => x.Contains("STREAM-TIME=")).Split(',').First(x => x.Contains("STREAM-TIME=")).Replace("STREAM-TIME=", "").Replace("\"", ""));
-                                    string streamQuality = playlistList.First(x => x.Contains("NAME=")).Split(',').First(x => x.Contains("NAME=")).Replace("NAME=", "").Replace("\"", "");
-                                    DateTime startTime = DateTimeOffset.FromUnixTimeSeconds((int)(serverTime - streamTime)).DateTime;
-                                    string playlist = playlistList.First(x => !x.StartsWith('#'));
 
-                                    if (!broadcastList.Contains(streamId) && streamQuality.Contains("(source)"))
+                                    DateTime startTime = DateTimeOffset.FromUnixTimeSeconds((int)(serverTime - streamTime)).DateTime;
+
+                                    // Check in which quality you want to archive
+                                    string playlist = "";
+                                    bool correctQuality = false;
+                                    string qualityPreference = globalSettings.RecordingSettings.QualityPreference;
+
+                                    if (streamerList[i].OverrideRecordingSettings)
+                                        qualityPreference = streamerList[i].RecordingSettings.QualityPreference;
+
+                                    if (qualityPreference == "Source")
+                                    {
+                                        playlist = playlistList.First(x => !x.StartsWith('#'));
+                                        correctQuality = playlistList.First(x => x.Contains("NAME=")).Split(',').First(x => x.Contains("NAME=")).Replace("NAME=", "").Replace("\"", "").Contains("(source)");
+                                    }
+                                    else
+                                    {
+                                        string quality = qualityPreference.Substring(1);
+                                        int streamQualityPostion = Array.IndexOf(playlistList, playlistList.First(x => x.Contains($"NAME=\"{quality}\"")));
+                                        playlist = playlistList.Skip(streamQualityPostion).First(x => !x.StartsWith('#'));
+                                        correctQuality = streamQualityPostion != -1;
+                                    }
+
+                                    if (!broadcastList.Contains(streamId) && correctQuality)
                                     {
                                         Console.WriteLine($"DETECTED {streamerList[i].Name} LIVE");
                                         Task downloadTask = DownloadTask(streamerList[i], globalSettings, playlist, streamId, startTime);
