@@ -103,6 +103,7 @@ namespace TwitchArchiverWPF
                             {
                                 try
                                 {
+                                    LogNow($"CHECKING {streamerList[i].Name}");
                                     using WebClient playlistClient = new WebClient();
                                     playlistClient.Headers.Add("Accept", "application/x-mpegURL, application/vnd.apple.mpegurl, application/json, text/plain");
                                     playlistClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0");
@@ -124,26 +125,29 @@ namespace TwitchArchiverWPF
                                     string playlist = "";
                                     bool correctQuality = false;
                                     string qualityPreference = globalSettings.RecordingSettings.QualityPreference;
+                                    string quality = qualityPreference.Substring(1);
 
                                     if (streamerList[i].OverrideRecordingSettings)
                                         qualityPreference = streamerList[i].RecordingSettings.QualityPreference;
 
-                                    if (qualityPreference == "Source")
+                                    try
                                     {
-                                        playlist = playlistList.First(x => !x.StartsWith('#'));
-                                        correctQuality = playlistList.First(x => x.Contains("NAME=")).Split(',').First(x => x.Contains("NAME=")).Replace("NAME=", "").Replace("\"", "").Contains("(source)");
-                                    }
-                                    else
-                                    {
-                                        string quality = qualityPreference.Substring(1);
                                         int streamQualityPostion = Array.IndexOf(playlistList, playlistList.First(x => x.Contains($"NAME=\"{quality}\"")));
                                         playlist = playlistList.Skip(streamQualityPostion).First(x => !x.StartsWith('#'));
                                         correctQuality = streamQualityPostion != -1;
+                                        LogNow($"QUALITY {quality} FOUND");
                                     }
+                                    catch (InvalidOperationException ie)
+                                    {
+                                        LogNow($"QUALITY {quality} NOT FOUND SWITCHING TO SOURCE");
+                                        playlist = playlistList.First(x => !x.StartsWith('#'));
+                                        correctQuality = playlistList.First(x => x.Contains("NAME=")).Split(',').First(x => x.Contains("NAME=")).Replace("NAME=", "").Replace("\"", "").Contains("(source)");
+                                    }
+    
 
                                     if (!broadcastList.Contains(streamId) && correctQuality)
                                     {
-                                        Console.WriteLine($"DETECTED {streamerList[i].Name} LIVE");
+                                        LogNow($"DETECTED {streamerList[i].Name} LIVE");
                                         Task downloadTask = DownloadTask(streamerList[i], globalSettings, playlist, streamId, startTime);
                                         broadcastList.Add(streamId);
                                     }
@@ -1176,7 +1180,15 @@ namespace TwitchArchiverWPF
             return false;
         }
 
-        [Conditional("DEBUG")]
+        private static void LogNow(string title)
+        {
+            string datePatt = @"M/d/yyyy hh:mm:ss tt";
+            DateTime logNow = DateTime.Now;
+            string dtString = logNow.ToString(datePatt);
+            Console.WriteLine($"{dtString} --- {title}");
+        }
+       
+    [Conditional("DEBUG")]
         public void OpenConsole()
         {
             AllocConsole();
