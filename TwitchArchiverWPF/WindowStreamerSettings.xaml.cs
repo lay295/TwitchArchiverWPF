@@ -38,6 +38,7 @@ namespace TwitchArchiverWPF
             NumLive.Value = currentStreamer.RecordingSettings.LiveCheck;
             CheckOauthVod.IsChecked = currentStreamer.RecordingSettings.EnableVodOauth;
             TextOauthVod.Text = currentStreamer.RecordingSettings.VodOauth;
+            QualityPreference.SelectedItem = (QualityPreference.FindName(currentStreamer.RecordingSettings.QualityPreference) as ComboBoxItem);
 
             CheckOverridePost.IsChecked = currentStreamer.OverrideRenderSettings;
             CheckRender.IsChecked = currentStreamer.RenderSettings.RenderChat;
@@ -59,6 +60,7 @@ namespace TwitchArchiverWPF
             CheckOauthVod.IsEnabled = true;
             if (CheckOauthVod.IsChecked == true)
                 TextOauthVod.IsEnabled = true;
+            QualityPreference.IsEnabled = true;
             currentStreamer.OverrideRecordingSettings = true;
         }
 
@@ -70,6 +72,7 @@ namespace TwitchArchiverWPF
             NumLive.IsEnabled = false;
             CheckOauthVod.IsEnabled = false;
             TextOauthVod.IsEnabled = false;
+            QualityPreference.IsEnabled = false;
             currentStreamer.OverrideRecordingSettings = false;
         }
 
@@ -220,6 +223,11 @@ namespace TwitchArchiverWPF
         private void CheckDownloadVodChat_Unchecked(object sender, RoutedEventArgs e)
         {
             currentStreamer.DownloadOptions.DownloadVodChat = false;
+        }
+
+        private void QualityPreference_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            currentStreamer.RecordingSettings.QualityPreference = ((sender as ComboBox).SelectedItem as ComboBoxItem).Name as string;
         }
     }
 }

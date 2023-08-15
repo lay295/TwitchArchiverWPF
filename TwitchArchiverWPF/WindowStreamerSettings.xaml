@@ -7,7 +7,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="TwitchArchiverWPF.WindowStreamerSettings"
         mc:Ignorable="d"
         Title="Streamer Settings" Height="450" Width="500" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,59">
+    <Grid Margin="0,0,0,20">
 
         <CheckBox x:Name="CheckRender" IsEnabled="False" Content="Render Chat" HorizontalAlignment="Left" Margin="266,154,0,0" VerticalAlignment="Top" Checked="CheckRender_Checked" Unchecked="CheckRender_Unchecked"/>
         <RadioButton x:Name="RadioLive" IsEnabled="False" GroupName="RenderPrefrence" Content="Live" HorizontalAlignment="Left" Margin="266,209,0,0" VerticalAlignment="Top" Checked="RadioLive_Checked"/>
@@ -22,7 +22,23 @@
         <hc:NumericUpDown IsEnabled="False" Value="3" x:Name="NumLive" Minimum="1"  HorizontalAlignment="Left" Margin="130,240,0,0" VerticalAlignment="Top" ValueChanged="NumLive_ValueChanged"/>
         <CheckBox x:Name="CheckOauthVod" IsEnabled="False" Content="Use Custom OAuth Token (VOD)" HorizontalAlignment="Left" Margin="20,277,0,0" VerticalAlignment="Top" Checked="CheckOauthVod_Checked" Unchecked="CheckOauthVod_Unchecked"/>
         <hc:TextBox x:Name="TextOauthVod" IsEnabled="False" HorizontalAlignment="Left" Margin="20,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" LostFocus="TextOauthVod_LostFocus"/>
-        <hc:Divider HorizontalAlignment="Left" Orientation="Vertical" Margin="237,95,0,0" VerticalAlignment="Top" Height="289" Width="13"/>
+        <hc:SimpleText Text="Default quality:" HorizontalAlignment="Left" Height="16" Margin="22,349,0,0" VerticalAlignment="Top" Width="138">
+            <UIElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UIElement.RenderTransform>
+        </hc:SimpleText>
+        <ComboBox IsEnabled="False" x:Name="QualityPreference" HorizontalAlignment="Left" Height="16" Margin="22,370,0,0" VerticalAlignment="Top" Width="138" SelectionChanged="QualityPreference_SelectionChanged" RenderTransformOrigin="-3.131,8.767">
+            <ComboBoxItem Name="Source">Source</ComboBoxItem>
+            <ComboBoxItem Name="_1080p">1080p</ComboBoxItem>
+            <ComboBoxItem Name="_720p">720p</ComboBoxItem>
+            <ComboBoxItem Name="_480p">480p</ComboBoxItem>
+        </ComboBox>
+        <hc:Divider HorizontalAlignment="Left" Orientation="Vertical" Margin="237,100,0,0" VerticalAlignment="Top" Height="309" Width="13"/>
         <CheckBox x:Name="CheckOverrideRecording" Content="Override Recording Settings" HorizontalAlignment="Left" Margin="21,112,0,0" VerticalAlignment="Top" Checked="CheckOverrideRecording_Checked" Unchecked="CheckOverrideRecording_Unchecked"/>
         <CheckBox x:Name="CheckOverridePost" Content="Override Post Proccessing Settings" HorizontalAlignment="Left" Margin="266,116,0,0" VerticalAlignment="Top" Checked="CheckOverridePost_Checked" Unchecked="CheckOverridePost_Unchecked"/>
         <hc:Divider HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Height="5" Width="500"/>

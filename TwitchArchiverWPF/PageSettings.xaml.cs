@@ -1,4 +1,5 @@
-﻿using IWshRuntimeLibrary;
+﻿using HandyControl.Tools.Extension;
+using IWshRuntimeLibrary;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -65,8 +67,11 @@ namespace TwitchArchiverWPF
                 RadioVod.IsChecked = true;
             else
                 RadioBoth.IsChecked = true;
-            TextOauth.Text = globalSettings.RecordingSettings.LiveOauth;
             TextOauthVod.Text = globalSettings.RecordingSettings.VodOauth;
+            TextOauth.Text = globalSettings.RecordingSettings.LiveOauth;
+
+            QualityPreference.SelectedItem = (QualityPreference.FindName(globalSettings.RecordingSettings.QualityPreference) as ComboBoxItem);
+
 
             using (RegistryKey? key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
             {
@@ -265,6 +270,12 @@ namespace TwitchArchiverWPF
                     }
                 }
             }
+        }
+
+        private void QualityPreference_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            globalSettings.RecordingSettings.QualityPreference = ((sender as ComboBox).SelectedItem as ComboBoxItem).Name as string;
+            SaveSettings();
         }
     }
 }

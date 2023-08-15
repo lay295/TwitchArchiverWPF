@@ -14,5 +14,7 @@ namespace TwitchArchiverWPF.Settings
         public int LiveCheck { get; set; } = 3;
         public bool EnableVodOauth { get; set; } = false;
         public string VodOauth { get; set; } = "";
+        public string QualityPreference { get; set; } = "Source";
+
     }
 }

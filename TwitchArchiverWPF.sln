@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwitchArchiverWPF", "TwitchArchiverWPF\TwitchArchiverWPF.csproj", "{643D7097-18BE-4CCD-988B-E3C8B60F4B40}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{D07836E7-CADE-4CBD-B79E-ED0DA005917B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TwitchArchiverInstaller", "TwitchArchiverInstaller\TwitchArchiverInstaller.vdproj", "{2B1AAD81-129F-4751-820C-FA0AF8E05B40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{D07836E7-CADE-4CBD-B79E-ED0DA005917B}.Debug|Any CPU.Build.0 = Release
 		{D07836E7-CADE-4CBD-B79E-ED0DA005917B}.Release|Any CPU.ActiveCfg = Release
 		{D07836E7-CADE-4CBD-B79E-ED0DA005917B}.Release|Any CPU.Build.0 = Release
+		{2B1AAD81-129F-4751-820C-FA0AF8E05B40}.Debug|Any CPU.ActiveCfg = Debug
+		{2B1AAD81-129F-4751-820C-FA0AF8E05B40}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
