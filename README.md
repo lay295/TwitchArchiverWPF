@@ -1,3 +1,6 @@
+<b>This project isn't being actively maintained, I would recommend looking into an alternative Twitch archiver such as ganymede
+https://github.com/Zibbp/ganymede</b>
+
 <p align="center">
   <a href="https://github.com/lay295/TwitchArchiverWPF">
     <img src="TwitchArchiverWPF/Images/logo.png" alt="Logo" width="80" height="80">
