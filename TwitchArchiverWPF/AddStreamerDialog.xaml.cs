@@ -112,7 +112,7 @@ namespace TwitchArchiverWPF
                         }
                         catch { }
                     }
-                    if (profileResponse.data.user.displayName != null && profileResponse.data.user.displayName.All(char.IsLetterOrDigit))
+                    if (profileResponse.data.user.displayName != null)
                         streamerName = profileResponse.data.user.displayName;
                 }
             }
